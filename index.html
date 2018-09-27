@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizza-online</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="javascript/index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Antin Pizzeria</h1>
+    <h2>Voit tilata pizzaa ja juomaa alla olevista painikkeista.
+    </h2><br>
+    <h3>Salamipizza 5e ja juoma 2e. Et voi ostaa kuin 1 juoman / pizza.</h3>
+    </header>
+    <div class="main_sector">
+            <p>Pizzoja: <a id="pizza_count">0</a></p>
+            <button type="button" onclick="decrease_pizza(); show()">-</button>
+            <button type="button" onclick="increase_pizza(); show()">+</button>
+            <p>Juomia: <a id="drink_count">0</a></p>
+            <button type="button" onclick="decrease_drink(); show()">-</button>
+            <button type="button" onclick="increase_drink(); show()">+</button>
+    </div>
+    <div class="section2">
+        <p><b>Hinta: <a id="result">0</a>€</p></b>
+    </div>
+    <footer>
+            <p>Posted by: Antti Karjalainen</p>
+            <p>Contact information:
+                <a href="mailto:someone@example.com">antti.karjalainen@student.saimia.fi</a>.</p>
+        </footer>
+</body>
+</html>

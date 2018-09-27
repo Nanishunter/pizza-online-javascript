@@ -1,0 +1,27 @@
+
+div.main_sector {
+    text-align: center;
+  
+}
+footer {
+    background-color: black;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    text-align: center;
+    position: static;
+    padding: 50px;
+    margin-top: 300px;
+}
+
+h1 {
+    text-align: center;
+    background-color:black;
+    color: white;
+}
+h3 {
+    text-align: center;
+}
+p {
+    text-align: center;
+    
+}
