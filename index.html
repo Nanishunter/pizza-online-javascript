@@ -8,8 +8,9 @@
     <title>Pizza-online</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 
@@ -36,12 +37,13 @@
         });
     </script>
 
-    <table id="menu_data" style="width:20%" class="table table-bordered table-striped">
+    <table id="menu_table" style="width:20%" class="table">
         <thead>
             <tr>
-                <th>id</th>
-                <th>pizza</th>
-                <th>täytteet</th>
+                <th>ID</th>
+                <th>Pizza</th>
+                <th>Täytteet</th>
+                <th>Hinta</th>
 
             </tr>
         </thead>
@@ -50,9 +52,12 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
 
             </tr>
             <tr>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -71,7 +76,7 @@
 
     </div>
 
-    <button id="id" class="btn btn-primary">Sulje sivu</button>
+    <button id="id" class="btn btn-primary">Sulje menu</button>
 
     <div class="section2">
         <p><b>Hinta: <a id="result">0</a>€</p></b>
@@ -93,24 +98,27 @@
 <script src="jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
+
 <script>
-        $(document).ready(function () {
-            $.getJSON("menu.json", function (data) {
-                var menu_data = '';
-                $.each(data, function (value) {
-                    menu_data += '<tr>';
-                    menu_data += '<td>' + value.id + '</td>';
-                    menu_data += '<td>' + value.pizza + '</td>';
-                    menu_data += '<td>' + value.täytteet + '</td>';
-                    menu_data += '<td>' + value.hinta + '</td>';
-                    menu_data += '</tr>';
-                });
-    
-                $('menutable').append(menu_data);
-    
+    $(document).ready(function () {
+        $.getJSON("https://api.myjson.com/bins/a5iqs", function (data) {
+            console.log(data);
+            var menu_data = '';
+            $.each(data, function (key, value) {
+                menu_data += '<tr>';
+                menu_data += '<td>' + value.id + '</td>';
+                menu_data += '<td>' + value.pizza + '</td>';
+                menu_data += '<td>' + value.täytteet + '</td>';
+                menu_data += '<td>' + value.hinta + '</td>';
+                menu_data += '</tr>';
             });
-    
+
+            $('#menu_table').append(menu_data);
+
         });
-    </script>
+
+    });
+</script>
+
 
 </html>
