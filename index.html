@@ -22,7 +22,7 @@
         </h2><br>
         <h3>Salamipizza 5e ja juoma 3e. Et voi ostaa kuin 1 juoman per pizza.</h3>
         <!-- /*<h4><div id="menu"></div></h4>*/ -->
-        
+
 
     </header>
     <script>
@@ -36,25 +36,25 @@
         });
     </script>
 
-    <table id="table" style="width:20%" class="display">
+    <table id="menu_data" style="width:20%" class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Pizza</th>
-                <th>Täyte</th>
-                
+                <th>id</th>
+                <th>pizza</th>
+                <th>täytteet</th>
+
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>Special Opera</td>
-                <td>Tonnikala,kinkku,Salami</td>
+                <td></td>
+                <td></td>
+                <td></td>
 
             </tr>
             <tr>
                 <td></td>
-                <td>Opera</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
@@ -92,5 +92,25 @@
 <script src="javascript/index.js"></script>
 <script src="jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+<script>
+        $(document).ready(function () {
+            $.getJSON("menu.json", function (data) {
+                var menu_data = '';
+                $.each(data, function (value) {
+                    menu_data += '<tr>';
+                    menu_data += '<td>' + value.id + '</td>';
+                    menu_data += '<td>' + value.pizza + '</td>';
+                    menu_data += '<td>' + value.täytteet + '</td>';
+                    menu_data += '<td>' + value.hinta + '</td>';
+                    menu_data += '</tr>';
+                });
+    
+                $('menutable').append(menu_data);
+    
+            });
+    
+        });
+    </script>
 
 </html>

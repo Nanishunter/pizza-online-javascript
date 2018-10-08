@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "pizza": "Opera",
+        "täytteet": "Kinkku, tonnikala, juusto",
+        "hinta": "5 Euroa"
+    },
+    {
+        "id": "2",
+        "pizza": "Special Opera",
+        "täytteet": "Kinkku, tonnikala, salami, Juusto",
+        "hinta": "5 Euroa"
+    },
+    {
+        "id": "4",
+        "pizza": "Tonnikala",
+        "täytteet": "Tonnikala, Juusto, Tomato, Parmesaani",
+        "hinta": "9 Euroa"
+    },
+    {
+        "id": "5",
+        "pizza": "Tonnikala",
+        "täytteet": "Tonnikala, Juusto, Tomaatti, Parmesaani",
+        "hinta": "8 Euroa"
+    },
+    {
+        "id": "6",
+        "pizza": "Tonnikala",
+        "täytteet": "Tonnikala, Juusto, Tomaatti, Parmesaani",
+        "hinta": "2 Euroa"
+    },
+    {
+        "id": "7",
+        "pizza": "Tonnikala",
+        "täytteet": "Tonnikala, Juusto, Tomaatti, Parmesaani",
+        "hinta": "4 Euroa"
+    }
+]

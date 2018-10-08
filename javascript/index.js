@@ -48,7 +48,7 @@ Order.prototype.decrease = function (type, price) {
     document.getElementById("total").value = this.total_count + " €";
 };
 
-var JsonData = [
+/* var JsonData = [
     {
         "id": "1",
         "pizza": "Opera",
@@ -90,6 +90,9 @@ JsonData.forEach(function
     document.getElementById('menu').innerHTML = menu;
     console.log(JsonData);
 });
+
+
+
 
 //Tässä ensin tehty versio, joka oli väärin, en käyttänyt olioita
 
