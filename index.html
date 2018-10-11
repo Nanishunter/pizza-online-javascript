@@ -21,7 +21,7 @@
         <h1>Antin Pizzeria</h1>
         <h2>Voit tilata pizzaa ja juomaa alla olevista painikkeista.
         </h2><br>
-        <h3>Salamipizza 5e ja juoma 3e. Et voi ostaa kuin 1 juoman per pizza.</h3>
+        <h3>Pizzat 5e ja juomat 3e/kpl. Et voi ostaa kuin 1 juoman per tilattu pizza.</h3>
         <!-- /*<h4><div id="menu"></div></h4>*/ -->
 
 
@@ -32,10 +32,35 @@
         });
         $(document).ready(function () {
             $("#id").click(function () {
-                $("table").toggle();
+                $("table").hide();
+                
+                
+            });
+        });
+        $(document).ready(function () {
+            $("#idd").click(function () {
+                $("table").show();
+                
+                
             });
         });
     </script>
+
+<input type="text" id="pizzaInput" onkeyup="searchBar()" placeholder="Search for names.." title="Type in a name">
+<ul id="myUL">
+<li><a href="#">Special Opera</a></li>
+  <li><a href="#">Tonnikala</a></li>
+  <li><a href="#">Kana</a></li>
+  <li><a href="#">Ananas</a></li>
+  <li><a href="#">Kasvis</a></li>
+  <li><a href="#">Bolognese</a></li>
+  
+  
+
+</ul>
+  
+
+
 
     <table id="menu_table" style="width:20%" class="table">
         <thead>
@@ -49,6 +74,7 @@
         </thead>
         <tbody>
             <tr>
+                    
                 <td></td>
                 <td></td>
                 <td></td>
@@ -64,6 +90,7 @@
         </tbody>
     </table>
 
+
     <div class="main_sector">
         <p>Pizzoja:</p>
         <button type="button" class="btn btn-primary" onclick="order.decrease('pizza', 5)">-</button>
@@ -76,8 +103,8 @@
 
     </div>
 
-    <button id="id" class="btn btn-primary">Sulje menu</button>
-
+    <button id="id" class="btn btn-primary"style="margin-left 100px;">Sulje menu</button>
+    <button id="idd" class="btn btn-primary">Avaa menu</button>
     <div class="section2">
         <p><b>Hinta: <a id="result">0</a>€</p></b>
         <p>Pizzoja:</p>
@@ -118,6 +145,27 @@
         });
 
     });
+</script>
+
+<script>
+
+    // SEARCHBAR
+    function searchBar() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("pizzaInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
 </script>
 
 
